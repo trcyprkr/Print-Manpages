@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "Please enter the name of the man file you wish to convert"
+read answer
+find /usr/share/man -name "$answer".*.gz | xargs > echo
+read text2
+zcat $text2 | groff -man -pdf > ~/Desktop/$answer
